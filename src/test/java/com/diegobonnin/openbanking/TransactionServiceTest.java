@@ -14,7 +14,7 @@ public class TransactionServiceTest {
 
     @Test
     public void testFindAllByAccountNumber() {
-        String accountNumber = "1234567890";
+        String accountNumber = "123456";
         List<Transaction> transactions = transactionService.findAllByAccountNumber(accountNumber);
         int expectedMinSize = 3;
         int expectedMaxSize = 5;

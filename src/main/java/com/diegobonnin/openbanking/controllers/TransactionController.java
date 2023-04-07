@@ -28,7 +28,19 @@ public class TransactionController {
     	List<TransactionDTO> transactions=new ArrayList<>();
     	
         for(Transaction t: transactionService.findAllByAccountNumber(accountNumber))
-        	transactions.add(new TransactionDTO(t.getAccountNumber(), t.getAmount()));
+        	transactions.add(
+        	
+        			TransactionDTO.builder()
+    		        .type(t.getType())
+    		        .date(t.getDate())
+    		        .accountNumber(t.getAccountNumber())
+    		        .currency(t.getCurrency())
+    		        .amount(t.getAmount())
+    		        .merchantName(t.getMerchantName())
+    		        .merchantLogo(t.getMerchantLogo())
+    		        .build()
+        			
+        	);
         
         return transactions;
         

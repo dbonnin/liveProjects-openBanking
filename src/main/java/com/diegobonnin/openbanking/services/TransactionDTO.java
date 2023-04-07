@@ -4,17 +4,15 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Builder
 public class TransactionDTO {
-	
-	public TransactionDTO(String accountNumber, BigDecimal amount) {
-		this.accountNumber=accountNumber;
-		this.amount=amount;
-	}
 	
 	public String type;
 	public LocalDate date;
